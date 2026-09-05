@@ -1,10 +1,10 @@
 import { NestFactory } from '@nestjs/core';
-import { AppModule, ObserveInstrument } from './app.module.js';
+import { AppModule } from './app.module.js';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule, {
-    instrument: ObserveInstrument,
-  });
-  await app.listen(process.env.PORT ?? 8080 );
+  const app = await NestFactory.create(AppModule);
+  const PORT = process.env.PORT ?? 3000;
+  await app.listen(PORT);
+  console.log(`El servidor esta corriendo en el puerto ${PORT}`);
 }
 await bootstrap();

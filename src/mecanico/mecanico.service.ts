@@ -1,8 +1,7 @@
-import { Injectable,ConflictException,NotFoundException } from '@nestjs/common';
-import {InjectRepository} from '@nestjs/typeorm';
-import {Repository} from 'typeorm';
+import { Injectable,NotFoundException } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 import { CreateMecanicoDto } from './dto/create-mecanico.dto.js';
-import { UpdateMecanicoDto } from './dto/update-mecanico.dto.js';
 import { Mecanico } from './entities/mecanico.entity.js';
 
 @Injectable()
@@ -25,7 +24,7 @@ export class MecanicoService {
     const mecanico = await this.mecanicoRepository.findOneBy({ id });
     
     if (!mecanico) {
-      throw new NotFoundException(`El Mecanico con el id:${id} no existe`);
+      throw new NotFoundException('El Mecanico con el id:'+ id + ' no existe');
     }
     
     return mecanico;

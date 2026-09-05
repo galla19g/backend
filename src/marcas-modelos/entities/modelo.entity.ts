@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, type Relation } from 'typeorm';
 import { Marca } from './marca.entity.js'
 @Entity('modelos')
 export class Modelos {
@@ -8,6 +8,7 @@ export class Modelos {
     @Column()
     nombre_modelo: string;
 
-    @ManyToOne(() => Marca, (Marca) => Marca.modelos)
-    marca: Marca;
+    @ManyToOne(() => Marca, (marca) => marca.modelos)
+    @JoinColumn({ name: 'marca_id' })
+    marca: Relation<Marca>;
 }

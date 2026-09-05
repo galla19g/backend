@@ -1,5 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
-import { Modelos } from './modelo.entity.js'; 
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany, type Relation } from 'typeorm';
+import { Modelos } from './modelo.entity.js';
 
 @Entity('marcas')
 export class Marca {
@@ -8,8 +8,8 @@ export class Marca {
     id: number;
 
     @Column({unique:true})
-    Nombre_Marca: String;
+    Nombre_Marca: string;
 
     @OneToMany(() => Modelos, (modelos) => modelos.marca)
-    modelos: Modelos[];
+    modelos: Relation<Modelos[]>;
 }

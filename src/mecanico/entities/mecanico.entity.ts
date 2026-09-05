@@ -1,5 +1,4 @@
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
-import { OrdenesServicio } from '../../ordenes-servicio/entities/ordenes-servicio.entity.js';
 
 @Entity('mecanicos')
 export class Mecanico {
@@ -15,6 +14,6 @@ export class Mecanico {
     @Column()
     especialidad:string;
 
-    @OneToMany(() => OrdenesServicio, (orden) => orden)
-    ordenesServicio: OrdenesServicio[]; 
+   // @OneToMany(() => OrdenesServicio, (orden) => orden)
+   // ordenesServicio: OrdenesServicio[];
 }
