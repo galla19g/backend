@@ -14,6 +14,4 @@ export class Mecanico {
     @Column()
     especialidad:string;
 
-   // @OneToMany(() => OrdenesServicio, (orden) => orden)
-   // ordenesServicio: OrdenesServicio[];
 }

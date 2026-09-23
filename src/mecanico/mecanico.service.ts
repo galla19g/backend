@@ -26,7 +26,6 @@ export class MecanicoService {
     if (!mecanico) {
       throw new NotFoundException('El Mecanico con el id:'+ id + ' no existe');
     }
-    
     return mecanico;
   }
 }

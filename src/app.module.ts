@@ -6,10 +6,11 @@ import { DatabaseModule } from './database/database.module.js';
 import { MarcaModule } from './marcas-modelos/marca.module.js';
 import { VehiculoModule } from './vehiculo/vehiculo.module.js';
 import { MecanicoModule } from './mecanico/mecanico.module.js';
-import { OrdenesServicioModule } from './ordenes-servicio/ordenes-servicio.module.js';
+import { OrdenesServicioModule } from './ordenes-servicio/orden.module.js';
 import { ModeloModule } from './marcas-modelos/modelo.module.js'
-export const { ObserveModule, ObserveInstrument } = createObserveModule();
+import { ServicioModule } from './ordenes-servicio/servicio.module.js';
 
+export const { ObserveModule, ObserveInstrument } = createObserveModule();
 @Module({
   imports: [
     DatabaseModule,
@@ -17,9 +18,10 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
     VehiculoModule,
     MecanicoModule,
     OrdenesServicioModule,
-    ModeloModule
+    ModeloModule,
+    ServicioModule
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule { }
