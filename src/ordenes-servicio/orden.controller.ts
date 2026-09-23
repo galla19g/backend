@@ -4,7 +4,7 @@ import { CreateOrdenDto } from './dto/create-orden.dto.js';
 import { UpdateOrdenDto } from './dto/update-orden.dto.js';
 import { Orden } from './entities/orden.entity.js';
 
-@Controller('ordenes-servicio')
+@Controller('orden')
 export class OrdenController {
   constructor(private readonly ordenService: OrdenService) {}
 
